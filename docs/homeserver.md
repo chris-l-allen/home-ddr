@@ -1,3 +1,8 @@
+---
+layout: default
+title: HomeServer
+---
+
 # HomeServer — LAN media + song library
 
 A tiny, dependency-free static server for the HomeDDR project.

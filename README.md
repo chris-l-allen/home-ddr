@@ -8,8 +8,10 @@
 > (Project OutFox + USB dance pad), plus a tiny **HomeServer** that publishes the
 > song library and karaoke media to the home LAN.
 
-**Status:** 🟡 Scaffolded. The repo, HomeServer, and docs exist. Nothing is
-installed on the Mac yet, and no hardware has been bought.
+**Status:** 🟡 Scaffolded, blocked on hardware. The repo, HomeServer, and docs
+exist. OutFox is **not** installed on the current family Mac by owner choice — it
+will run on a dedicated HomeServer box (refurbished Mac Studio/mini) that has not
+been bought yet. The chosen pad is a metal L-TEK, also not yet bought.
 
 ---
 
@@ -34,13 +36,13 @@ free software, and a small local server so the whole house can reach the library
 
 | | |
 |---|---|
-| **Target machine** | Family Mac (currently Intel `x86_64`, macOS 26.5.2, 16 GB) |
-| **DDR engine** | **Project OutFox** — free, StepMania-based, macOS builds |
-| **Input** | USB dance pad (soft pad ~$32–$60 CAD; metal pad later) |
+| **Target machine** | Dedicated HomeServer box — refurb **Mac mini M4 16/256 @ $929 CAD** recommended (not bought) |
+| **DDR engine** | **Project OutFox** — free, StepMania-based, Universal macOS build |
+| **Input** | **L-TEK Core** metal USB pad — CAD 389 goods + ~$64 Ontario import (chosen 2026-11-05, not bought) |
 | **Song content** | Free/community packs + optional custom charts (Alvin & the Chipmunks, etc.) |
 | **HomeServer** | Python 3 stdlib `http.server`, no dependencies |
 | **Server default** | `http://127.0.0.1:8787` (LAN: set `HOMEDDR_HOST=0.0.0.0`) |
-| **Cost** | ~$32–$60 CAD for the pad; software is free |
+| **Cost** | L-TEK Core $389 CAD + ~$64 import + shipping; refurb Mac mini $929 + HST; software is free |
 
 ---
 
@@ -52,9 +54,6 @@ free software, and a small local server so the whole house can reach the library
   path to a real, replayable gift.
 - Official DDR titles do not ship for macOS, and "Just Dance" is not native to Mac,
   which is exactly why the OutFox route matters.
-
-> **Note:** "Lou Williams" is a **children's author** (corrected 2026-11-05 — not
-> the NBA player). Specific titles are still TBD; see [HANDOFF.md](HANDOFF.md).
 
 ---
 
@@ -97,15 +96,16 @@ Labeled per the project's evidence discipline (see `AGENTS.md`):
 - **FACT** — host Mac is `x86_64` (Intel), macOS `26.5.2`, 16 GB RAM.
 - **FACT** — Python `3.14.6`, Node `25.5.0`, git, `gh` (logged in), and Homebrew are
   installed.
-- **FACT** — OutFox's site lists macOS builds (Intel + Apple Silicon), dance-pad
-  support, and standard StepMania `.sm`/`.ssc` song loading. Latest dev build on
-  the site: **0.5.0 Final Alpha (2025-09-07)**; legacy **0.4.19 LTS** is marked
-  outdated.
-- **FACT** — No OutFox/StepMania installation is present in `/Applications` yet.
-- **INFERENCE** — OutFox runs on this Intel Mac; a current Intel build should be
-  available, but verify against the downloads page at install time.
-- **GUESS** — macOS `26.5.2` compatibility is untested for OutFox; expect it to
-  work, but confirm.
+- **FACT** — OutFox's site lists a **Universal macOS DMG** (Intel + Apple Silicon),
+  dance-pad support, and standard StepMania `.sm`/`.ssc` song loading. Latest dev
+  build on the site: **0.5.0 Final Alpha (2025-09-07)**; legacy **0.4.19 LTS** is
+  marked outdated.
+- **FACT** — No OutFox/StepMania installation is present in `/Applications` yet,
+  and the owner declined installing it on this Mac (2026-11-05).
+- **FACT** — Owner wants OutFox on a dedicated HomeServer box (refurbished Mac
+  Studio or Mac mini), not purchased yet.
+- **GUESS** — OutFox compatibility with the eventual box's macOS version is
+  untested; verify at install time.
 
 ---
 
@@ -118,7 +118,7 @@ Labeled per the project's evidence discipline (see `AGENTS.md`):
 # 2. Expose it to the LAN
 HOMEDDR_HOST=0.0.0.0 ./scripts/serve.sh
 
-# 3. (Later) install the DDR engine + pad
+# 3. (On the future HomeServer box) install the DDR engine
 ./scripts/install-outfox.sh           # opens the official download page
 
 # 4. Point OutFox at the shared song library (after install)
@@ -154,8 +154,9 @@ HOMEDDR_HOST=0.0.0.0 ./scripts/serve.sh
 
 ## Roadmap / open decisions
 
-- [ ] Confirm the "Lou Williams" reference.
-- [ ] Choose pad: cheap soft pad (~$32–$60) vs metal L-TEK (~$150+, ships from EU).
+- [x] Choose pad: **metal L-TEK Core** (CAD 389 + ~$64 import + shipping) — chosen 2026-11-05.
+- [ ] Buy the L-TEK Core pad (awaiting owner go-ahead).
+- [ ] Buy a refurbished **Mac mini M4 16GB/256GB ($929 CAD)** for the HomeServer box.
 - [ ] Install OutFox on the family Mac and verify it launches on macOS 26.5.2.
 - [ ] Curate kid-friendly song packs; confirm low-difficulty charts exist.
 - [ ] Decide whether to author custom Alvin & the Chipmunks charts (manual work).
@@ -171,8 +172,10 @@ HOMEDDR_HOST=0.0.0.0 ./scripts/serve.sh
   version info)
 - OutFox wiki — <https://outfox.wiki/>
 - OutFox GitHub — <https://github.com/TeamRizu/OutFox>
-- Candidate pads (CAD, price at time of writing):
-  OSTENT USB pad $31.99, Domary pad $38.60 — see `HANDOFF.md`.
+- Apple Certified Refurbished (CA) — <https://www.apple.com/ca/shop/refurbished/mac>
+- L-TEK official store — <https://www.iamats.com/shop/> (Core CAD 389 / 240€, Poland)
+- DDRPad.com (US reseller) — <https://ddrpad.com/en-ca/products/l-tek-core-dance-pad>
+- Prices checked 2026-11-05; see `HANDOFF.md` §7.1 for the detailed table.
 
 Prices and availability move — re-check before buying.
 

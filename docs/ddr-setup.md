@@ -1,3 +1,8 @@
+---
+layout: default
+title: DDR setup
+---
+
 # HomeDDR — OutFox setup, pad, and kid-friendly charts
 
 This doc covers running a DDR/rhythm station on the family Mac.
@@ -10,21 +15,28 @@ This doc covers running a DDR/rhythm station on the family Mac.
 - Official site: <https://projectoutfox.com/> · Downloads:
   <https://projectoutfox.com/downloads> · Wiki: <https://outfox.wiki/>
 
-**FACT** (from the project site, 2026-11): macOS builds are offered for both Intel
-and Apple Silicon; dance-pad support and `.sm`/`.ssc` import are listed features.
+**FACT** (from the project site, 2026-11): the macOS release is a **Universal DMG**
+(Intel + Apple Silicon); dance-pad support and `.sm`/`.ssc` import are listed
+features.
 
-**INFERENCE:** the Intel build will run on this `x86_64` Mac. **GUESS:** it runs on
-macOS `26.5.2` — verify at install.
+**FACT** (owner, 2026-11-05): OutFox will run on a dedicated HomeServer box — a
+refurbished **Mac Studio or Mac mini** — not on the current family Mac. That box is
+not purchased yet, so installation is deferred.
+
+**GUESS:** compatibility with the future box's macOS version is untested; verify at
+install time.
 
 ### Install
+
+Run this **on the eventual HomeServer box**, not the current family Mac:
 
 ```bash
 ./scripts/install-outfox.sh
 ```
 
-The script opens the official downloads page; download the macOS build and drag it
-to `/Applications`. macOS may block an unsigned app — use System Settings →
-Privacy & Security → "Open Anyway" if prompted.
+The script opens the official downloads page; download the Universal macOS DMG and
+drag the app to `/Applications`. macOS may block an unsigned app — use System
+Settings → Privacy & Security → "Open Anyway" if prompted.
 
 ## 2. The pad
 
@@ -34,10 +46,10 @@ A USB dance pad presents as keyboard arrows, so no drivers are needed.
 |---|---|---|
 | Soft pad | $32–$60 | Cheap, folds up, slippery; up/down arrows wear out |
 | Foam pad | ~$100 | Firmer, still wears |
-| Metal pad (L-TEK) | ~$150+ | Durable, arcade feel, ships from EU |
+| **Metal pad (L-TEK Core) — chosen** | CAD 389 goods + ~$64 Ontario import | Durable, arcade feel, ships from Poland |
 
-For a 5-year-old, a soft pad is fine to start. Confirm OutFox registers all four
-arrows before relying on it.
+**Owner choice (2026-11-05): metal L-TEK.** Nothing purchased yet. When it arrives,
+confirm OutFox registers all four arrows before relying on it.
 
 **Test:** open OutFox → Options → Input → Test Input; step on each arrow and confirm
 the mapping.
