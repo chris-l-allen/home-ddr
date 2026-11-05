@@ -73,6 +73,7 @@ search before authoring from scratch.
 ## 5. Kid mode
 
 - Start on the easiest difficulties; turn off fail.
-- Use a wide camera/noteskin for visibility.
+- Use a readable noteskin and a wide/distant **perspective** (the in-game camera
+  angle — **not** a webcam) so the arrows are easy to see.
 - Keep sessions short; DDR is physically tiring for small kids.
 - Consider a second pad for co-op later.
