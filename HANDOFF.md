@@ -41,6 +41,11 @@ made; budget not yet set.
 - **GUESS** OutFox works on macOS `26.5.2` — untested here. The future box may
   ship with a different macOS version; re-verify there.
 - **FACT** Per owner (2026-11-05), HomeServer is verified to run on this Mac.
+- **FACT** Repo is now **public** (2026-11-05), required for free GitHub Pages.
+  A scan found no secrets, emails, or addresses before the switch.
+- **FACT** Rendered docs site is live: <https://chris-l-allen.github.io/home-ddr/>.
+  Pages build status `built`; `/`, `/ddr-setup.html`, and `/homeserver.html` all
+  returned HTTP 200 with rendered HTML (verified 2026-11-05).
 
 ---
 
@@ -216,6 +221,7 @@ approval; nothing has been ordered.
 - `README.md` — what/why/architecture/layout/roadmap.
 - `docs/ddr-setup.md` — OutFox, pad, kid difficulty, custom songs.
 - `docs/homeserver.md` — server usage + LAN security notes.
+- `docs/index.md` + `docs/_config.yml` — GitHub Pages landing page and config.
 - `homeserver/server.py` — the server.
 - `scripts/*` — install/serve/link helpers.
 - `launchd/com.local.homeddr.plist` — persistence.
@@ -274,3 +280,6 @@ system software or buying anything. Keep HANDOFF.md updated as you go.
   $929 CAD recommended; L-TEK Core at CAD 389 recommended. Nothing purchased.
 - **2026-11-05** — Documented the recommendation as decision #7; shipping region
   Ontario, Canada (street address excluded from repo). Awaiting purchase approval.
+- **2026-11-05** — Made the repo public and enabled GitHub Pages from `docs/`.
+  Live at <https://chris-l-allen.github.io/home-ddr/>; build `built` and all pages
+  verified HTTP 200 with rendered HTML.

@@ -13,6 +13,8 @@ exist. OutFox is **not** installed on the current family Mac by owner choice —
 will run on a dedicated HomeServer box (refurbished Mac Studio/mini) that has not
 been bought yet. The chosen pad is a metal L-TEK, also not yet bought.
 
+**Docs site:** <https://chris-l-allen.github.io/home-ddr/>
+
 ---
 
 ## What this is
@@ -136,6 +138,8 @@ HOMEDDR_HOST=0.0.0.0 ./scripts/serve.sh
 ├── AGENTS.md                 # project rules (evidence discipline)
 ├── LICENSE
 ├── docs/
+│   ├── index.md              # GitHub Pages landing page
+│   ├── _config.yml           # GitHub Pages / Jekyll config
 │   ├── ddr-setup.md          # OutFox + pad + kid difficulty + custom songs
 │   └── homeserver.md         # HomeServer usage and security notes
 ├── homeserver/
