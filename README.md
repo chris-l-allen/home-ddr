@@ -53,10 +53,8 @@ free software, and a small local server so the whole house can reach the library
 - Official DDR titles do not ship for macOS, and "Just Dance" is not native to Mac,
   which is exactly why the OutFox route matters.
 
-> **Open question:** "Lou Williams" is ambiguous — assumed to be the retired NBA
-> player ("Sweet Lou"), but confirm. Official kids' merch is essentially
-> nonexistent, so his name is more likely a *song/celebration* theme than a product
-> to buy. Tracked in [HANDOFF.md](HANDOFF.md).
+> **Note:** "Lou Williams" is a **children's author** (corrected 2026-11-05 — not
+> the NBA player). Specific titles are still TBD; see [HANDOFF.md](HANDOFF.md).
 
 ---
 

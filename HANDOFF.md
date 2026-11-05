@@ -51,8 +51,8 @@ Budget for the gift itself: **~$50–75 CAD**, but the DDR rig can total
 
 ## 4. Open questions
 
-1. **"Lou Williams"** — confirm identity (NBA player vs. someone local). If NBA,
-   there is no meaningful kids' merch; treat as a theme, not a purchase.
+1. **"Lou Williams"** — a **children's author** (confirmed 2026-11-05; not the NBA
+   player). Which titles does she love? Useful for an author-themed gift bundle.
 2. **Pad tier** — cheap soft pad now, or metal L-TEK (~$150+, EU shipping)?
 3. **Custom charts** — do we author Alvin & the Chipmunks charts (hours of manual
    work) or just use existing kid packs?
@@ -134,8 +134,8 @@ Current state: repo scaffolded; nothing installed; host is an Intel Mac,
 macOS 26.5.2, 16 GB, with Python 3.14.6, Node 25.5.0, git, gh, and Homebrew.
 
 Do next, in order:
-1. Ask me to confirm (a) the "Lou Williams" reference and (b) pad tier
-   (cheap soft pad vs metal L-TEK).
+1. Ask me (a) which Lou Williams children's books she loves (author, not the
+   NBA player) and (b) pad tier (cheap soft pad vs metal L-TEK).
 2. Install Project OutFox on the Mac (verify the Intel build and macOS 26.5.2
    compatibility), then confirm it launches.
 3. Verify the dance pad is detected as arrow input and a low-difficulty chart
@@ -154,3 +154,4 @@ system software or buying anything. Keep HANDOFF.md updated as you go.
 
 - **2026-11-05** — Repo scaffolded: README, HANDOFF, AGENTS, docs, HomeServer,
   scripts, launchd plist. Git initialized.
+- **2026-11-05** — Corrected "Lou Williams": children's author, not the NBA player.
