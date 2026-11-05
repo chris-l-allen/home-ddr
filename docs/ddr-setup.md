@@ -42,17 +42,18 @@ Settings → Privacy & Security → "Open Anyway" if prompted.
 
 A USB dance pad presents as keyboard arrows, so no drivers are needed.
 
-| Tier | Price (CAD) | Trade-off |
+| Tier | Price (CAD) | Role |
 |---|---|---|
-| Soft pad | $32–$60 | Cheap, folds up, slippery; up/down arrows wear out |
-| Foam pad | ~$100 | Firmer, still wears |
-| **Metal pad (L-TEK Core) — chosen** | CAD 389 goods + ~$64 Ontario import | Durable, arcade feel, ships from Poland |
+| **Soft pad (bridge)** | $32–60 | **Buy now** to prove the rig; temporary, wears out |
+| Foam pad | ~$100 | Optional middle ground |
+| **Metal pad (L-TEK Core)** | CAD 389 goods + ~$64 Ontario import | **Final pad — deferred** until the bridge passes every test |
 
-**Owner choice (2026-11-05): metal L-TEK.** Nothing purchased yet. When it arrives,
-confirm OutFox registers all four arrows before relying on it.
+**Owner plan (2026-11-05): bridge now, upgrade later.** Buy a cheap local soft pad,
+complete setup and test all four arrows plus a 1–3 foot chart, then order the L-TEK
+Core. The project concludes when the final L-TEK pad arrives.
 
 **Test:** open OutFox → Options → Input → Test Input; step on each arrow and confirm
-the mapping.
+the mapping. Repeat on the final L-TEK pad when it arrives.
 
 ## 3. Song packs
 

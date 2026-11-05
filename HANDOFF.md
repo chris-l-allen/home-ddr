@@ -15,10 +15,9 @@ Build a kid-friendly DDR/rhythm station for a **5-year-old girl** who loves
 **dancing, singing, Alvin and the Chipmunks**, plus a tiny **HomeServer** that
 publishes the song/media library on the home LAN. No console, no subscriptions.
 
-Budget: the original **~$50–75 CAD** gift target is obsolete now that the owner
-chose a metal L-TEK plus a refurbished Mac. Current researched prices: **L-TEK
-Core CAD 389 + ~$64 import**, **refurb Mac mini $929 CAD** (see §7.1). No purchases
-made; budget not yet set.
+Budget: the original **~$50–75 CAD** gift target is obsolete. Phase 1 (mini +
+bridge pad) ≈ **$1,085–1,120 CAD**; phase 2 (L-TEK Core) ≈ **$600–665**; total ≈
+**$1,690–1,785 CAD** (see §7.1). No purchases made; budget not yet approved.
 
 ---
 
@@ -46,6 +45,10 @@ made; budget not yet set.
 - **FACT** Rendered docs site is live: <https://chris-l-allen.github.io/home-ddr/>.
   Pages build status `built`; `/`, `/ddr-setup.html`, and `/homeserver.html` all
   returned HTTP 200 with rendered HTML (verified 2026-11-05).
+- **FACT** (2026-11-05) Owner changed the acquisition plan: buy a **cheap local
+  soft pad as a bridge now**; do **not** order the L-TEK Core until the mini,
+  OutFox, bridge pad, and HomeServer all test positive. The project concludes when
+  the **final L-TEK Core arrives**.
 
 ---
 
@@ -54,12 +57,13 @@ made; budget not yet set.
 | # | Decision | Rationale |
 |---|---|---|
 | 1 | Use **Project OutFox**, not official DDR | Official DDR isn't on macOS; OutFox is free, cross-platform, supports pads |
-| 2 | Buy a **metal L-TEK Core USB dance pad** (owner choice, 2026-11-05) | Durable arcade feel; CAD 389 goods + ~$64 import, ships from Poland. No purchase yet |
+| 2 | Final pad: **metal L-TEK Core** (owner choice, 2026-11-05) | Durable arcade feel; CAD 389 goods + ~$64 import, ships from Poland. **Deferred until bridge tests pass** |
 | 3 | Build HomeServer on **Python stdlib** | Zero dependencies; runs anywhere; trivial to maintain |
 | 4 | Keep song packs/media **gitignored** | Large binaries; share via LAN or object storage instead |
 | 5 | Follow existing homelab doc style | Consistency with `mac-studio-ai-homeserver` |
 | 6 | Run OutFox on a **dedicated HomeServer box** (refurbished Mac Studio/mini), **not** the current family Mac (owner, 2026-11-05) | Owner's call; keeps the DDR station on the server. Hardware not yet bought |
-| 7 | **Recommended buy (pending approval):** refurb **Mac mini M4 16GB/256GB ($929 CAD)** + **L-TEK Core (CAD 389)**; ship to **Toronto, ON** | Cheapest researched combo that meets the workload; no bar needed for a 5-year-old. Street address and full postal code deliberately kept out of the repo |
+| 7 | **Buy now (pending approval):** refurb **Mac mini M4 16/256 ($929 CAD)** + **cheap local soft pad**; ship to **Toronto, ON**. L-TEK Core deferred | Cheapest path to a working rig; no $600 pad commitment until tests pass. Street address and full postal code deliberately kept out of the repo |
+| 8 | **Bridge now, L-TEK later:** complete setup and positive tests on a cheap soft pad, then order the **L-TEK Core**; project concludes when the final pad arrives (owner, 2026-11-05) | Avoids committing to the expensive pad before the rig is proven; keeps a Sunday bridge achievable |
 
 ---
 
@@ -75,30 +79,35 @@ made; budget not yet set.
 2. **Custom charts** — do we author Alvin & the Chipmunks charts (hours of manual
    work) or just use existing kid packs?
 3. **Two pads** — single-player now, second pad later?
-4. **Reverse proxy** — publish HomeServer via the existing Caddy stack or keep it
+4. **Bridge pad** — which cheap local pad/store: Amazon next-day (~$32–60) or a
+   Canada Computers/Best Buy pickup? Target **$30–60 CAD**.
+5. **If the mini is late** — may we temporarily install OutFox on the current Mac
+   to hit the bridge deadline? Owner previously declined this; needs a fresh OK.
+6. **Reverse proxy** — publish HomeServer via the existing Caddy stack or keep it
    standalone on `:8787`?
 
 ---
 
 ## 5. Next actions (ordered)
 
-1. **Hardware decision** — recommendation recorded: refurb **Mac mini M4 16/256
-   ($929 CAD)** + **L-TEK Core (CAD 389)**, ship to Toronto, ON. Waiting on the owner's
-   explicit purchase approval; no purchase without it.
-2. **Pad purchase** — metal L-TEK **Core** (CAD 389 goods + ~$64 Ontario import;
-   shipping cart-only). No bar needed for a 5-year-old. No purchase without owner
-   go-ahead.
-3. On the new box: `./scripts/install-outfox.sh` → install OutFox, launch once;
+1. **Buy phase 1 (awaiting explicit go-ahead):** refurb **Mac mini M4 16/256
+   ($929 CAD)** + a **cheap local soft pad** (~$32–60 + tax). **Do not order the
+   L-TEK yet.**
+2. On the mini: `./scripts/install-outfox.sh` → install OutFox, launch once;
    confirm the Universal build runs on that macOS version.
-4. Plug in the L-TEK; confirm OutFox sees arrow input; play a default chart.
-5. `./scripts/link-songpacks.sh`; drop 2–3 kid packs into `songpacks/`.
-6. Verify low-difficulty charts (1–3 foot) are playable for a 5-year-old.
-7. Start HomeServer (`./scripts/serve.sh`) and load it from a phone on the LAN.
+3. `./scripts/link-songpacks.sh`; drop 2–3 kid packs into `songpacks/`.
+4. Test the bridge pad: all four arrows register and a 1–3 foot chart is playable.
+5. Start HomeServer (`./scripts/serve.sh`) and load it from a phone on the LAN.
+6. **Only if steps 2–5 pass:** order the **L-TEK Core** (CAD 389 goods + ~$64
+   Ontario import + cart-quoted shipping).
+7. When the L-TEK arrives: repeat the arrow/chart test. **Project concludes when
+   the final pad is delivered and verified.**
 8. Decide on custom Alvin charts; if yes, chart a short pack.
 9. Add to `mac-studio-ai-homeserver` Caddy routing (future).
 
-> **Blocked/deferred:** steps 3–6 wait on the new hardware; step 7 can be tested on
-> the current Mac with owner permission (it is network-facing).
+> **Contingency:** if the mini is late, temporarily install OutFox on the current
+> Mac to keep the Sunday bridge alive — requires a fresh owner OK (previously
+> declined).
 
 ---
 
@@ -119,15 +128,17 @@ HOMEDDR_HOST=0.0.0.0 ./scripts/serve.sh  # expose to LAN
 
 | Item | Price (CAD) | Link |
 |---|---|---|
-| **L-TEK Core (chosen model)** | CAD 389 regular (240€ page) | https://www.iamats.com/shop/dance-mat-ltek-core/ |
+| **L-TEK Core (final pad — deferred)** | CAD 389 regular (240€ page) | https://www.iamats.com/shop/dance-mat-ltek-core/ |
 | L-TEK Core via US reseller | $639 CAD (sold out) | https://ddrpad.com/en-ca/products/l-tek-core-dance-pad |
 | VTech Kidi Superstar Jr. karaoke | $59.99 | https://www.amazon.ca/dp/B0BS2SCS2W |
 | VTech Sing It Out karaoke mic | $46.96 | https://www.amazon.ca/dp/B09MVV6V5P |
 
-> **Superseded:** the soft-pad options below are no longer the plan. Owner chose a
-> metal L-TEK (2026-11-05). Nothing has been purchased.
+> **Bridge first (owner, 2026-11-05):** buy one of the cheap soft pads below **now**
+> as a temporary test pad. Do **not** order the L-TEK until the mini, OutFox,
+> bridge pad, and HomeServer all test positive. The project concludes when the
+> final L-TEK Core arrives.
 
-| Soft-pad options (superseded) | Price (CAD) | Link |
+| Bridge-pad options (buy now) | Price (CAD) | Link |
 |---|---|---|
 | OSTENT USB StepMania dance mat | $31.99 | https://www.amazon.ca/dp/B00FJ2KTXC |
 | Domary USB dance pad | $38.60 | https://www.amazon.ca/dp/B0H8YNZ3Q9 |
@@ -189,29 +200,35 @@ Refurb stock is limited and changes often.
 
 - Ships from Athens, Ohio; worldwide shipping; import taxes/duties may apply;
   30-day returns; shipping at checkout.
+- The **$1,335** line is DDRPad's **Prime pad + steel Handbar** bundle (USB + PS
+  adapter variant) — a premium, advanced-play package, **not** the Core. The bar
+  is unnecessary for a 5-year-old; ignore this line for the project.
 
 **Recommendation (INFERENCE / GUESS, no purchase made):**
 
 - **Mac mini M4 16/256 @ $929 CAD** — best value for OutFox + static server.
   The $2,729 Studio is ~3x for no DDR benefit; only choose it if the box also
   needs to run heavy AI/other workloads.
-- **L-TEK Core, no bar** — right size and durability for a 5-year-old. Buy from
-  the official store for the 2-year warranty, or DDRPad when in stock for faster
-  US shipping. Goods + import ≈ **$453 CAD**; shipping is the open variable. A
-  **GUESS** of ~$150–210 shipping puts the Core at **~$600–665 CAD landed** —
-  re-quote in the cart.
+- **Bridge pad now** — one cheap soft pad (~$32–60 + tax) to prove the setup and
+  survive the Sunday deadline. It is temporary, not the gift pad.
+- **L-TEK Core later** — order only after the bridge tests pass. Goods + import
+  ≈ **$453 CAD**; shipping is the open variable. A **GUESS** of ~$150–210
+  shipping puts the Core at **~$600–665 CAD landed** — re-quote in the cart.
 
 **Shipping destination (owner, 2026-11-05): Toronto, Ontario, Canada.** The full
 postal code was derived and used only for the shipping estimate; it is deliberately
 **not recorded** in the repo. Only the FSA **M6H** is stored, and the street
 address is excluded.
 
-**Combined budget (GUESS, not a quote):** Mac mini $929 + 13% HST ≈ $1,050; Core
-landed ≈ $600–665 → **roughly $1,650–1,715 CAD all-in**. Apple's refurb price also
-excludes HST. Re-quote both carts before buying.
+**Phase 1 budget (now, GUESS):** Mac mini $929 + 13% HST ≈ $1,050; bridge pad
+$32–60 + tax ≈ $35–70 → **roughly $1,085–1,120 CAD**.
+**Phase 2 budget (after tests pass):** L-TEK Core landed ≈ $600–665.
+**Project total including the bridge pad:** **roughly $1,690–1,785 CAD all-in**.
+Re-quote both carts before buying; Apple's price excludes HST.
 
-**Documented recommendation:** buy the **Mac mini M4 16/256 ($929 CAD)** and the
-**L-TEK Core (CAD 389)**. The decision is pending the owner's explicit purchase
+**Documented recommendation:** buy the **Mac mini M4 16/256 ($929 CAD)** and a
+**cheap local soft pad now**. Order the **L-TEK Core (CAD 389)** only after the
+mini, OutFox, bridge pad, and HomeServer tests pass. Pending explicit purchase
 approval; nothing has been ordered.
 
 ---
@@ -243,22 +260,22 @@ USB dance pad) for a 5-year-old girl who loves dancing, singing, and Alvin and
 the Chipmunks, plus a tiny LAN HomeServer that publishes the song packs and
 media.
 
-Current state: repo scaffolded. OutFox is NOT to be installed on the current Intel
-family Mac; owner wants it on a dedicated HomeServer box (refurbished Mac Studio or
-Mac mini) that has not been purchased yet. Pad choice: metal L-TEK (not purchased).
-Current Mac: Intel x86_64, macOS 26.5.2, 16 GB, Python 3.14.6, Node 25.5.0, git, gh,
-Homebrew.
+Current state: repo scaffolded; docs live on GitHub Pages. OutFox is NOT to be
+installed on the current Intel family Mac; owner wants it on a dedicated HomeServer
+box (refurbished Mac mini recommended) that has not been purchased yet. Plan:
+**bridge with a cheap local soft pad now**, test everything, then order the metal
+L-TEK Core. The project concludes when the final L-TEK pad arrives. Current Mac:
+Intel x86_64, macOS 26.5.2, 16 GB, Python 3.14.6, Node 25.5.0, git, gh, Homebrew.
 
 Do next, in order:
-1. Confirm the hardware budget: researched picks are a refurb Mac mini M4 16/256
-   ($929 CAD) and an L-TEK Core pad (CAD 389 goods + ~$64 import). Do not buy anything
-   without an explicit go-ahead.
-2. Once the box exists: install Project OutFox (Universal DMG), verify it launches
-   on that macOS version.
-3. Verify the L-TEK pad is detected as arrow input and a low-difficulty chart is
-   playable.
+1. Confirm budget/go-ahead: refurb Mac mini M4 16/256 ($929 CAD) + a cheap local
+   soft pad ($32-60). Do NOT order the L-TEK yet. No purchase without explicit OK.
+2. Install Project OutFox on the mini (Universal DMG); verify it launches.
+3. Test the bridge pad: all four arrows register; play a 1-3 foot chart.
 4. Load 2-3 kid-friendly song packs via scripts/link-songpacks.sh.
 5. Start HomeServer and confirm it loads from a phone on the LAN.
+6. Only if tests pass: order the L-TEK Core (CAD 389 + ~$64 import + shipping).
+7. Project concludes when the final L-TEK pad arrives and passes the same test.
 
 Rules: follow the evidence discipline in AGENTS.md — label FACT / INFERENCE /
 GUESS, never claim something works until tested here, and ask before installing
@@ -283,3 +300,6 @@ system software or buying anything. Keep HANDOFF.md updated as you go.
 - **2026-11-05** — Made the repo public and enabled GitHub Pages from `docs/`.
   Live at <https://chris-l-allen.github.io/home-ddr/>; build `built` and all pages
   verified HTTP 200 with rendered HTML.
+- **2026-11-05** — Owner set the **bridge plan**: buy a cheap local soft pad now,
+  prove the rig, then order the L-TEK Core. Project concludes when the final pad
+  arrives. Updated decisions, actions, budgets, docs, and resume prompt.

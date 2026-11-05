@@ -23,7 +23,8 @@ No console, no subscription, no per-song purchases.
 - **Engine:** Project OutFox 0.5.0 Final Alpha (Universal macOS DMG).
 - **Target box:** dedicated HomeServer — refurbished **Mac mini M4 16GB/256GB**
   (recommended, not yet bought).
-- **Pad:** **L-TEK Core** metal USB pad (chosen, not yet bought).
+- **Pad:** cheap local **soft pad now** (bridge); **L-TEK Core** ordered only after
+  the setup and tests pass. Project concludes when the final L-TEK arrives.
 - **Host constraint:** OutFox is deliberately **not** installed on the current
   family Mac.
 - **HomeServer:** verified locally (`/health` returns `ok`, `/` returns 200).

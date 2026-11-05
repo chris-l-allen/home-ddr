@@ -8,10 +8,11 @@
 > (Project OutFox + USB dance pad), plus a tiny **HomeServer** that publishes the
 > song library and karaoke media to the home LAN.
 
-**Status:** 🟡 Scaffolded, blocked on hardware. The repo, HomeServer, and docs
-exist. OutFox is **not** installed on the current family Mac by owner choice — it
-will run on a dedicated HomeServer box (refurbished Mac Studio/mini) that has not
-been bought yet. The chosen pad is a metal L-TEK, also not yet bought.
+**Status:** 🟡 Scaffolded, waiting on hardware. OutFox is **not** installed on the
+current family Mac by owner choice — it will run on a dedicated HomeServer box
+(refurbished Mac mini recommended, not bought yet). The plan is **bridge now,
+upgrade later**: buy a cheap local soft pad, prove the whole rig, then order the
+metal **L-TEK Core**. The project concludes when the final L-TEK pad arrives.
 
 **Docs site:** <https://chris-l-allen.github.io/home-ddr/>
 
@@ -40,11 +41,11 @@ free software, and a small local server so the whole house can reach the library
 |---|---|
 | **Target machine** | Dedicated HomeServer box — refurb **Mac mini M4 16/256 @ $929 CAD** recommended (not bought) |
 | **DDR engine** | **Project OutFox** — free, StepMania-based, Universal macOS build |
-| **Input** | **L-TEK Core** metal USB pad — CAD 389 goods + ~$64 Ontario import (chosen 2026-11-05, not bought) |
+| **Input** | **Cheap local soft pad now** (bridge, ~$32–60); **L-TEK Core** later (CAD 389 + ~$64 import) after tests pass |
 | **Song content** | Free/community packs + optional custom charts (Alvin & the Chipmunks, etc.) |
 | **HomeServer** | Python 3 stdlib `http.server`, no dependencies |
 | **Server default** | `http://127.0.0.1:8787` (LAN: set `HOMEDDR_HOST=0.0.0.0`) |
-| **Cost** | L-TEK Core $389 CAD + ~$64 import + shipping; refurb Mac mini $929 + HST; software is free |
+| **Cost** | Phase 1: mini $929 + HST + bridge pad ~$35–70 ≈ **$1,085–1,120**; Phase 2: L-TEK Core ≈ **$600–665**; total ≈ **$1,690–1,785** |
 
 ---
 
@@ -158,9 +159,12 @@ HOMEDDR_HOST=0.0.0.0 ./scripts/serve.sh
 
 ## Roadmap / open decisions
 
-- [x] Choose pad: **metal L-TEK Core** (CAD 389 + ~$64 import + shipping) — chosen 2026-11-05.
-- [ ] Buy the L-TEK Core pad (awaiting owner go-ahead).
 - [ ] Buy a refurbished **Mac mini M4 16GB/256GB ($929 CAD)** for the HomeServer box.
+- [ ] Buy a **cheap local soft pad** as a bridge (~$32–60).
+- [ ] Install OutFox, load kid packs, test all four arrows + a 1–3 foot chart.
+- [ ] Start HomeServer and pass the phone LAN test.
+- [ ] **Only after tests pass:** order the **L-TEK Core** (CAD 389 + ~$64 import + shipping).
+- [ ] Project concludes when the final L-TEK pad arrives and passes the same test.
 - [ ] Install OutFox on the family Mac and verify it launches on macOS 26.5.2.
 - [ ] Curate kid-friendly song packs; confirm low-difficulty charts exist.
 - [ ] Decide whether to author custom Alvin & the Chipmunks charts (manual work).
