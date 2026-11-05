@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Large / local content (keep the directories, not the files)
+songpacks/*
+!songpacks/.gitkeep
+media/*
+!media/.gitkeep
