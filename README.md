@@ -39,13 +39,13 @@ free software, and a small local server so the whole house can reach the library
 
 | | |
 |---|---|
-| **Target machine** | Dedicated HomeServer box — refurb **Mac mini M4 16/256 @ $929 CAD** recommended (not bought) |
+| **Target machine** | Dedicated HomeServer box — refurb **Mac mini M4 16/512 @ $1,189 CAD** recommended; 16/256 @ $1,059 alternative (not bought) |
 | **DDR engine** | **Project OutFox** — free, StepMania-based, Universal macOS build |
 | **Input** | **Cheap local soft pad now** (bridge, ~$32–60); **L-TEK Core** later (CAD 389 + ~$64 import) after tests pass |
 | **Song content** | Free/community packs + optional custom charts (Alvin & the Chipmunks, etc.) |
 | **HomeServer** | Python 3 stdlib `http.server`, no dependencies |
 | **Server default** | `http://127.0.0.1:8787` (LAN: set `HOMEDDR_HOST=0.0.0.0`) |
-| **Cost** | Phase 1: mini $929 + HST + bridge pad ~$35–70 ≈ **$1,085–1,120**; Phase 2: L-TEK Core ≈ **$600–665**; total ≈ **$1,690–1,785** |
+| **Cost** | Phase 1: mini $1,189 + HST + bridge pad ~$35–70 ≈ **$1,379–1,414**; Phase 2: L-TEK Core ≈ **$600–665**; total ≈ **$1,979–2,079** (16/256 alternative ≈ $1,832–1,932) |
 
 ---
 
@@ -159,7 +159,7 @@ HOMEDDR_HOST=0.0.0.0 ./scripts/serve.sh
 
 ## Roadmap / open decisions
 
-- [ ] Buy a refurbished **Mac mini M4 16GB/256GB ($929 CAD)** for the HomeServer box.
+- [ ] Buy a refurbished **Mac mini M4 16GB/512GB ($1,189 CAD)** for the HomeServer box; 16/256 ($1,059) is the budget option.
 - [ ] Buy a **cheap local soft pad** as a bridge (~$32–60).
 - [ ] Install OutFox, load kid packs, test all four arrows + a 1–3 foot chart.
 - [ ] Start HomeServer and pass the phone LAN test.

@@ -15,9 +15,11 @@ Build a kid-friendly DDR/rhythm station for a **5-year-old girl** who loves
 **dancing, singing, Alvin and the Chipmunks**, plus a tiny **HomeServer** that
 publishes the song/media library on the home LAN. No console, no subscriptions.
 
-Budget: the original **~$50–75 CAD** gift target is obsolete. Phase 1 (mini +
-bridge pad) ≈ **$1,085–1,120 CAD**; phase 2 (L-TEK Core) ≈ **$600–665**; total ≈
-**$1,690–1,785 CAD** (see §7.1). No purchases made; budget not yet approved.
+Budget: the original **~$50–75 CAD** gift target is obsolete. With the $929 mini
+gone, recommended phase 1 (16/512 mini + bridge pad) ≈ **$1,379–1,414 CAD**; phase
+2 (L-TEK Core) ≈ **$600–665**; total ≈ **$1,979–2,079 CAD**. The 16/256 mini
+alternative totals ≈ **$1,832–1,932** (see §7.1). No purchases made; budget not yet
+approved.
 
 ---
 
@@ -62,7 +64,7 @@ bridge pad) ≈ **$1,085–1,120 CAD**; phase 2 (L-TEK Core) ≈ **$600–665**;
 | 4 | Keep song packs/media **gitignored** | Large binaries; share via LAN or object storage instead |
 | 5 | Follow existing homelab doc style | Consistency with `mac-studio-ai-homeserver` |
 | 6 | Run OutFox on a **dedicated HomeServer box** (refurbished Mac Studio/mini), **not** the current family Mac (owner, 2026-11-05) | Owner's call; keeps the DDR station on the server. Hardware not yet bought |
-| 7 | **Buy now (pending approval):** refurb **Mac mini M4 16/256 ($929 CAD)** + **cheap local soft pad**; ship to **Toronto, ON**. L-TEK Core deferred | Cheapest path to a working rig; no $600 pad commitment until tests pass. Street address and full postal code deliberately kept out of the repo |
+| 7 | **Buy now (pending approval):** refurb **Mac mini M4 16/512 ($1,189 CAD)**, or **16/256 ($1,059)** to minimize spend, + **cheap local soft pad**; ship to **Toronto, ON**. L-TEK Core deferred | $929 unit sold out; 16/512 doubles storage for $130. No $600 pad commitment until tests pass. Street address and full postal code kept out of the repo |
 | 8 | **Bridge now, L-TEK later:** complete setup and positive tests on a cheap soft pad, then order the **L-TEK Core**; project concludes when the final pad arrives (owner, 2026-11-05) | Avoids committing to the expensive pad before the rig is proven; keeps a Sunday bridge achievable |
 
 ---
@@ -72,10 +74,10 @@ bridge pad) ≈ **$1,085–1,120 CAD**; phase 2 (L-TEK Core) ≈ **$600–665**;
 1. **Hardware** — which refurbished box: **Mac mini** (cheaper, low power) or
    **Mac Studio** (more headroom)? What budget, and Intel vs Apple Silicon?
    OutFox's macOS build is Universal, so either arch works in principle.
-   **Recommendation (INFERENCE, not tested):** refurb **Mac mini M4 16GB/256GB at
-   $929 CAD** is ample for OutFox + the static server; the cheapest refurb Mac
-   Studio seen was $2,729 CAD (M4 Max), which is overkill here. 256GB may need an
-   external SSD later for a big song/media library.
+   **Recommendation (INFERENCE, not tested):** with the $929 unit gone, the refurb
+   **Mac mini M4 16GB/512GB at $1,189 CAD** is the best value; the **16GB/256GB at
+   $1,059** is the budget alternative. The $2,729 Mac Studio is overkill for this
+   workload. 256GB may need an external SSD later for a big song/media library.
 2. **Custom charts** — do we author Alvin & the Chipmunks charts (hours of manual
    work) or just use existing kid packs?
 3. **Two pads** — single-player now, second pad later?
@@ -90,9 +92,9 @@ bridge pad) ≈ **$1,085–1,120 CAD**; phase 2 (L-TEK Core) ≈ **$600–665**;
 
 ## 5. Next actions (ordered)
 
-1. **Buy phase 1 (awaiting explicit go-ahead):** refurb **Mac mini M4 16/256
-   ($929 CAD)** + a **cheap local soft pad** (~$32–60 + tax). **Do not order the
-   L-TEK yet.**
+1. **Buy phase 1 (awaiting explicit go-ahead):** refurb **Mac mini M4 16/512
+   ($1,189 CAD)** — or **16/256 ($1,059)** to minimize — + a **cheap local soft
+   pad** (~$32–60 + tax). **Do not order the L-TEK yet.**
 2. On the mini: `./scripts/install-outfox.sh` → install OutFox, launch once;
    confirm the Universal build runs on that macOS version.
 3. `./scripts/link-songpacks.sh`; drop 2–3 kid packs into `songpacks/`.
@@ -151,14 +153,19 @@ HOMEDDR_HOST=0.0.0.0 ./scripts/serve.sh  # expose to LAN
 
 **Apple Certified Refurbished (apple.com/ca, CAD, fetched 2026-11-05):**
 
-| Item | Price | Notes |
-|---|---|---|
-| Mac mini M4, 10-core CPU/GPU, **16GB / 256GB**, Gigabit | **$929** (was $1,099) | Specs verified on product page; 1-yr warranty, 15-day returns |
-| Mac mini M4, 10-core CPU/GPU, Gigabit | $1,189 (was $1,399) | RAM/storage not verified |
-| Mac mini M4 Pro, 12-core CPU/16-core GPU, Gigabit | $1,949 (was $2,299) | RAM/storage not verified |
-| Mac Studio M4 Max, 14-core CPU/32-core GPU | $2,729 (was $3,499) | RAM/storage not verified |
+**Re-checked 2026-11-05 after the $929 unit sold:**
 
-Refurb stock is limited and changes often.
+| Item | Price | Status |
+|---|---|---|
+| Mac mini M4, 10-core CPU/GPU, **16GB / 256GB**, Gigabit | $929 (was $1,099) | **GONE** — no longer listed on the mini page |
+| Mac mini M4, 10-core, **16GB / 256GB**, 10Gb Ethernet | **$1,059** | In stock ("Add to Bag"); specs verified |
+| Mac mini M4, 10-core, **16GB / 512GB**, Gigabit | **$1,189** | In stock; specs verified; **recommended** |
+| Mac mini M4, 10-core, **24GB / 512GB**, Gigabit | $1,439 | In stock; specs verified |
+| Mac mini M4 Pro, 12-core CPU/16-core GPU, Gigabit | $1,949 | In stock; RAM/storage not verified |
+| Mac Studio M4 Max, 14-core CPU/32-core GPU | $2,729 | In stock; RAM/storage not verified |
+
+Refurb stock is limited and changes often. The $929 price still appears on a stale
+Studio-page tile but **not** on the mini page — treat it as unavailable.
 
 **L-TEK / iAmats (official, Poland; CAD prices are the vendor's own Canada reference):**
 
@@ -206,9 +213,11 @@ Refurb stock is limited and changes often.
 
 **Recommendation (INFERENCE / GUESS, no purchase made):**
 
-- **Mac mini M4 16/256 @ $929 CAD** — best value for OutFox + static server.
-  The $2,729 Studio is ~3x for no DDR benefit; only choose it if the box also
-  needs to run heavy AI/other workloads.
+- **Mac mini M4 16/512 @ $1,189 CAD — recommended now.** The $929 unit sold;
+  $1,189 doubles the SSD over the $1,059 16/256 for $130, which is cheaper than
+  adding an external SSD later. INFERENCE: 16GB RAM is plenty for OutFox + a static
+  server. Choose **$1,059 16/256** only if minimizing spend; pick **$1,439 24/512**
+  or the **$2,729 Studio** only for unrelated heavier workloads.
 - **Bridge pad now** — one cheap soft pad (~$32–60 + tax) to prove the setup and
   survive the Sunday deadline. It is temporary, not the gift pad.
 - **L-TEK Core later** — order only after the bridge tests pass. Goods + import
@@ -220,13 +229,15 @@ postal code was derived and used only for the shipping estimate; it is deliberat
 **not recorded** in the repo. Only the FSA **M6H** is stored, and the street
 address is excluded.
 
-**Phase 1 budget (now, GUESS):** Mac mini $929 + 13% HST ≈ $1,050; bridge pad
-$32–60 + tax ≈ $35–70 → **roughly $1,085–1,120 CAD**.
+**Phase 1 budget (now, GUESS):**
+- 16/512 mini: $1,189 + 13% HST = **$1,343.57**; + bridge pad $35–70 →
+  **≈ $1,379–1,414 CAD**.
+- 16/256 mini: $1,059 + HST = **$1,196.67**; + bridge pad → **≈ $1,232–1,267**.
 **Phase 2 budget (after tests pass):** L-TEK Core landed ≈ $600–665.
-**Project total including the bridge pad:** **roughly $1,690–1,785 CAD all-in**.
+**Project totals:** 16/512 ≈ **$1,979–2,079**; 16/256 ≈ **$1,832–1,932**.
 Re-quote both carts before buying; Apple's price excludes HST.
 
-**Documented recommendation:** buy the **Mac mini M4 16/256 ($929 CAD)** and a
+**Documented recommendation:** buy the **Mac mini M4 16/512 ($1,189 CAD)** and a
 **cheap local soft pad now**. Order the **L-TEK Core (CAD 389)** only after the
 mini, OutFox, bridge pad, and HomeServer tests pass. Pending explicit purchase
 approval; nothing has been ordered.
@@ -268,8 +279,9 @@ L-TEK Core. The project concludes when the final L-TEK pad arrives. Current Mac:
 Intel x86_64, macOS 26.5.2, 16 GB, Python 3.14.6, Node 25.5.0, git, gh, Homebrew.
 
 Do next, in order:
-1. Confirm budget/go-ahead: refurb Mac mini M4 16/256 ($929 CAD) + a cheap local
-   soft pad ($32-60). Do NOT order the L-TEK yet. No purchase without explicit OK.
+1. Confirm budget/go-ahead: refurb Mac mini M4 16/512 ($1,189 CAD; 16/256 $1,059
+   alternative) + a cheap local soft pad ($32-60). Do NOT order the L-TEK yet. No
+   purchase without explicit OK.
 2. Install Project OutFox on the mini (Universal DMG); verify it launches.
 3. Test the bridge pad: all four arrows register; play a 1-3 foot chart.
 4. Load 2-3 kid-friendly song packs via scripts/link-songpacks.sh.
@@ -303,3 +315,5 @@ system software or buying anything. Keep HANDOFF.md updated as you go.
 - **2026-11-05** — Owner set the **bridge plan**: buy a cheap local soft pad now,
   prove the rig, then order the L-TEK Core. Project concludes when the final pad
   arrives. Updated decisions, actions, budgets, docs, and resume prompt.
+- **2026-11-05** — The $929 refurb mini sold out. Re-checked stock: **16/512 at
+  $1,189** now recommended, **16/256 at $1,059** budget alternative; totals updated.
