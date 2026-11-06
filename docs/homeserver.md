@@ -1,53 +1,14 @@
 ---
 layout: default
-title: HomeServer
+title: Moved — HomeServer
 ---
 
-# HomeServer — LAN media + song library
+<meta http-equiv="refresh" content="0; url=https://chris-l-allen.github.io/mac-studio-ai-homeserver/docs/ddr-homeserver.html">
 
-A tiny, dependency-free static server for the HomeDDR project.
+# This page has moved
 
-## Run
+HomeServer is now part of **mac-studio-ai-homeserver**.
 
-```bash
-./scripts/serve.sh                      # http://127.0.0.1:8787 (local only)
-HOMEDDR_HOST=0.0.0.0 ./scripts/serve.sh # expose to the LAN
-```
+→ [HomeServer documentation](https://chris-l-allen.github.io/mac-studio-ai-homeserver/docs/ddr-homeserver.html)
 
-Or directly:
-
-```bash
-python3 homeserver/server.py
-```
-
-## Configuration
-
-| Env var | Default | Meaning |
-|---|---|---|
-| `HOMEDDR_HOST` | `127.0.0.1` | Bind address (`0.0.0.0` for LAN) |
-| `HOMEDDR_PORT` | `8787` | Port |
-| `HOMEDDR_ROOT` | repo root | Content root |
-
-## Endpoints
-
-| Path | Purpose |
-|---|---|
-| `/` | Landing page listing packs and media |
-| `/songs/` | Browse/download song packs |
-| `/media/` | Browse/download karaoke/audio |
-| `/health` | JSON health check |
-
-## Persistence
-
-`launchd/com.local.homeddr.plist` keeps the server running at login.
-
-```bash
-cp launchd/com.local.homeddr.plist ~/Library/LaunchAgents/
-launchctl load ~/Library/LaunchAgents/com.local.homeddr.plist
-```
-
-## Security
-
-This is a **LAN-only** file server with no authentication. Do not expose it to the
-public internet. If remote access is needed, put it behind the homelab reverse
-proxy or a VPN (e.g. Tailscale), not a port-forward.
+This repository is archived and kept for history only.

@@ -1,5 +1,10 @@
 # HomeDDR + HomeServer
 
+> **Archived 2026-11-06 — absorbed into
+> [mac-studio-ai-homeserver](https://github.com/chris-l-allen/mac-studio-ai-homeserver).**
+> This repository is retained for history only. The live documentation is at
+> <https://chris-l-allen.github.io/mac-studio-ai-homeserver/docs/>.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Platform: macOS](https://img.shields.io/badge/platform-macOS-black.svg)]()
 [![Status: scaffolded](https://img.shields.io/badge/status-scaffolded-yellow.svg)]()
@@ -14,7 +19,8 @@ current family Mac by owner choice — it will run on a dedicated HomeServer box
 upgrade later**: buy a cheap local soft pad, prove the whole rig, then order the
 metal **L-TEK Core**. The project concludes when the final L-TEK pad arrives.
 
-**Docs site:** <https://chris-l-allen.github.io/home-ddr/>
+**Docs site:** moved to <https://chris-l-allen.github.io/mac-studio-ai-homeserver/docs/>
+(the old `home-ddr` Pages site now redirects there).
 
 ---
 
